@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:rich="http://richfaces.org/rich">
+
+	<ui:composition template="/pages/template/templatePage.xhtml">
+		<ui:define name="content">
+
+			<fieldset>	
+			<legend>Add New Name</legend>
+			<h:form prependId="false">
+			
+				<h:panelGroup id="messagePaneladd" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: green"
+						layout="table" />	
+						</h:panelGroup>		
+				<h:panelGrid columns="2">
+
+						
+				<h:outputLabel value="Name"  for="ftName"/>
+				<h:inputText id="ftName" value="#{familyTreeController.current.ftName}" />		
+
+				<h:outputLabel value="Father Name"  for="ftFathername"/>
+				<rich:select id="ftFathername"
+					defaultLabel="Select Your Father ..."
+					enableManualInput="true"
+					value="#{familyTreeController.current.ftFatherId}">
+					<f:selectItems value="#{dropdownDataLoader.fathersList}"
+						var="father" itemValue="#{father.value}"
+						itemLabel="#{father.name}" />
+				</rich:select>
+				
+				<h:outputLabel value="Mother Name"  for="ftMathername"/>
+				<rich:select id="ftMathername"
+					defaultLabel="Select Your Mother ..."
+					enableManualInput="true"
+					value="#{familyTreeController.current.ftMatherId}">
+					<f:selectItems value="#{dropdownDataLoader.mothersList}"
+						var="mother" itemValue="#{mother.value}"
+						itemLabel="#{mother.name}" />
+				</rich:select>
+				
+				<h:outputLabel value="Gender" />
+				<rich:select
+						
+						defaultLabel="Select Gender ..."
+						enableManualInput="true"
+						value="#{familyTreeController.current.ftGender}">
+
+						<f:selectItems value="#{dropdownDataLoader.genderList}" var="gender" 
+						itemValue="#{gender.value}" itemLabel="#{gender.name}" />
+												
+					</rich:select>	
+				</h:panelGrid>
+				<h:commandButton action="#{familyTreeController.addNew}" value="Submit"/>
+				<h:commandButton value="Cancel" immediate="true" action="#{familyTreeController.cancelBackToList()}"/>
+			</h:form>
+		</fieldset>
+
+			
+		</ui:define>
+	</ui:composition>	
+</html>

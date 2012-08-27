@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:rich="http://richfaces.org/rich">
+
+	<ui:composition template="/pages/template/templatePage.xhtml">
+		<ui:define name="content">
+			<h:form id="tableForm" prependId="false">
+				<h:commandButton action="#{familyTreeController.prepareAdd}" image="/images/document_add.png"/>
+				<h:commandButton action="#{familyTreeController.prepareCahrt}" image="/images/document_edit.png"/>
+				
+				<h:link outcome="chart" value="Charting "/>
+				
+				<rich:dataTable value="#{familyTreeController.items}" var="current" rows="#{familyTreeController.rowCount}">
+					
+					
+					
+					<ui:include src="/JPAColumn.xhtml">
+						<ui:param name="bean" value="#{familyTreeController}"></ui:param>
+						<ui:param name="property" value="ftId"></ui:param>
+						<ui:param name="column_title" value="Id"></ui:param>
+					</ui:include>
+					
+					<ui:include src="/JPAColumn.xhtml">
+						<ui:param name="bean" value="#{familyTreeController}"></ui:param>
+						<ui:param name="property" value="ftName"></ui:param>
+						<ui:param name="column_title" value="Name"></ui:param>
+					</ui:include>
+					
+					<ui:include src="/JPAColumn.xhtml">
+						<ui:param name="bean" value="#{familyTreeController}"></ui:param>
+						<ui:param name="property" value="gender"></ui:param>
+						<ui:param name="column_title" value="Gender"></ui:param>
+					</ui:include>
+					
+
+										
+				</rich:dataTable>
+			
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html>

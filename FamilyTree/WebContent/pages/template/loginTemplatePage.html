@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+	
+   <h:head>
+   		<title>Umrah Portal</title>
+		<h:outputStylesheet library="css" name="reset.css" />
+		<h:outputStylesheet library="css" name="text.css" />
+		<h:outputStylesheet library="css" name="grid.css" />
+		<h:outputStylesheet library="css" name="sejel.ecss" />
+		<h:outputStylesheet library="css" name="styles.css" />
+		
+
+   </h:head>
+   
+   <h:body dir="#{localeResource.dir}"> 
+   
+		<h:panelGroup layout="block" id="wrap" styleClass="container_16">
+	   		<h:panelGroup layout="block" id="main" >
+				
+				<h:panelGroup layout="block" id="headerBlock" styleClass="grid_16">
+					<ui:include src="/pages/template/sections/header.xhtml"></ui:include>
+				</h:panelGroup>
+				<h:panelGroup layout="block" styleClass="clear" />
+				
+				<h:panelGroup id="bodyBlock" layout="block">
+					<h:panelGroup layout="block" styleClass="grid_3">
+						<ui:include src="/pages/template/sections/sidebar.xhtml"></ui:include>
+					</h:panelGroup>	
+
+					<h:panelGroup layout="block" styleClass="grid_13">
+						<ui:insert name="content" />
+					</h:panelGroup>
+				</h:panelGroup>
+				<h:panelGroup layout="block" styleClass="clear" />
+				
+	   		</h:panelGroup>
+		</h:panelGroup>
+		<h:panelGroup layout="block" id="footer">
+			<ui:include src="/pages/template/sections/footer.xhtml" />
+		</h:panelGroup>
+   </h:body>
+   
+   
+
+
+<rich:jQuery selector=".filterIcon" query="live('click',function(){jQuery(this).parent('th').find('.hiddenText').toggle()})" />
+<rich:jQuery selector=".rf-p" query="addClass('viewPanel')" />
+
+</html>
+

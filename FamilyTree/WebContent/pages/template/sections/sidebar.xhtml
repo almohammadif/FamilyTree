@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      >
+   <ui:composition>
+<h:form>
+
+
+					<rich:panelMenu width="100%" groupMode="ajax" itemMode="server">
+					
+					<rich:panelMenuGroup label="UASP" > 	
+						<rich:panelMenuItem label="UASP" action="/pages/lookups/umrahServiceApplicationProvider/List.xhtml"/>
+					</rich:panelMenuGroup>
+
+					<rich:panelMenuGroup label="Umra Operators">
+						<rich:panelMenuItem label="Umra Operators"  action="/pages/lookups/umraOperator/List.xhtml"/>
+					</rich:panelMenuGroup>
+
+					
+					<rich:panelMenuGroup label="Extarnal Agents">
+						<rich:panelMenuItem label="List" action="/pages/lookups/ea/List.xhtml"/>
+					</rich:panelMenuGroup>
+
+					
+					<rich:panelMenuGroup label="Mutamers">
+						<rich:panelMenuItem label="Search Current Season" action="/pages/lookups/mutamerCurrentSeason/List.xhtml"/>
+						<rich:panelMenuItem label="Search Previous Seasons" />
+						<rich:panelMenuItem label="Mutamer Inquery  NIC" />
+						<rich:panelMenuItem label="Mutamer Lost" action="/pages/lookups/lostMutamer/List.xhtml" />
+						<rich:panelMenuItem label="Mutamer Irshad"  action="/pages/lookups/mutamerIrshad/List.xhtml" /> 
+						<rich:panelMenuItem label="Transaction Letters" action="/pages/lookups/transactions/List.xhtml" />
+						<rich:panelMenuItem label="Mutamers Tafweej" />
+					</rich:panelMenuGroup>
+					
+					<rich:panelMenuGroup label="UO Plan">
+						<rich:panelMenuItem label="UO Plan" />
+						<rich:panelMenuItem label="Plan" />
+					</rich:panelMenuGroup>
+					
+					<rich:panelMenuGroup label="Requests">
+						<rich:panelMenuItem label="UA/UO Association Requested" action="/pages/lookups/uauoContractRequested/List.xhtml" />
+						<rich:panelMenuItem label="UO/Hotel Requested" action="/pages/Requests/uoHotelAssocRequested/List.xhtml" />
+						<rich:panelMenuItem label="UO/Employee Requested" />
+						<rich:panelMenuItem label="UO/LocalTransport Requests" action="/pages/Requests/uoLocaltransportationAssocRequest/List.xhtml" />
+					</rich:panelMenuGroup> 	
+ 	
+					<rich:panelMenuGroup label="Services"> 	
+						<rich:panelMenuItem label="Hotels" action="/pages/lookups/hotels/List.xhtml" />
+						<rich:panelMenuItem label="Air Transportations" action="/pages/lookups/airTransportation/List.xhtml"/>
+						<rich:panelMenuItem label="Sea Transportations" action="/pages/lookups/seaTransportation/List.xhtml"/>
+						<rich:panelMenuItem label="Land Transportations" action="/pages/lookups/landTransportation/List.xhtml"/>
+						<rich:panelMenuItem label="Local Transportations" action="/pages/lookups/localTransportation/List.xhtml"/>
+						<rich:panelMenuItem label="Hospitals" action="/pages/lookups/hospitals/List.xhtml"/>
+						<rich:panelMenuItem label="Police Stations" action="/pages/lookups/policeSecurity/List.xhtml"/>
+						<rich:panelMenuItem label="Tours" action="/pages/lookups/tours/List.xhtml"/>
+						<rich:panelMenuItem label="Flights" />
+					</rich:panelMenuGroup>	
+								
+					<rich:panelMenuGroup label="Master Data">
+						<rich:panelMenuItem label="Nationalties" action="/pages/lookups/nationalities/List.xhtml"/>
+																			
+						<rich:panelMenuItem label="Countries" action="/pages/lookups/countries/List.xhtml"/>
+						<rich:panelMenuItem label="Cities"  action="/pages/lookups/cities/List.xhtml"/>
+					</rich:panelMenuGroup>			
+
+					<rich:panelMenuGroup label="Monitoring Fields">
+						<rich:panelMenuItem label="Monitoring Field"  action="/pages/lookups/monitoringField/List.xhtml"/>
+					</rich:panelMenuGroup>	
+					
+					<rich:panelMenuGroup label="Claims and Settlements">
+						<rich:panelMenuItem label="Claim and Settlement"  action="/pages/lookups/claim/List.xhtml"/>
+					</rich:panelMenuGroup>	
+					
+					<rich:panelMenuGroup label="Reports and Statistics">
+						<rich:panelMenuItem label="Report List" />
+						<rich:panelMenuItem label="Statistics"  action="/pages/reportStatistics/statistics/List.xhtml"/>
+						<rich:panelMenuItem label="UO Escaped" action="/pages/reportStatistics/uoEscaped/List.xhtml" />
+						<rich:panelMenuItem label="UO Plan Statistics" />
+					</rich:panelMenuGroup>	
+					
+					<rich:panelMenuGroup label="Incident Reports">
+						<rich:panelMenuItem label="Incident Report" action="/pages/lookups/incidentReport/List.xhtml" />
+					</rich:panelMenuGroup>	
+					
+					<rich:panelMenuGroup label="User Management SetUp">
+						<rich:panelMenuItem label="Permission" action="/pages/setup/permission/List.xhtml"/>
+						<rich:panelMenuItem label="Roles" action="/pages/setup/roles/List.xhtml"/>
+						<rich:panelMenuItem label="Groups" action="/pages/setup/group/List.xhtml"/>
+						<rich:panelMenuItem label="Users" action="/pages/setup/user/List.xhtml" />
+					</rich:panelMenuGroup>	
+					
+					</rich:panelMenu>
+
+	      </h:form>	
+</ui:composition>
+</html>
